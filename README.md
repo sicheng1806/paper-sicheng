@@ -1,4 +1,4 @@
-# Paper Sicheng
+# Paper SiCheng Typst模版库
 
 一个模块化设计的Typst模块库，会随着模版滚动更新。
 
@@ -12,7 +12,7 @@
 
     ```typ
     #import "./src/lib.typ": hhu-thesis // 导入模版，替换为实际lib.typ路径
-    #import hhu-thesis: hhu-bachelor-thesis, // 从模版库导入样式函数和一些写作模型
+    #import hhu-thesis: hhu-bachelor-thesis,thanks,appendix-conf // 从模版库导入样式函数和一些写作模型
 
     #show: hhu-bachelor-thesis.with(
         author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
@@ -72,7 +72,7 @@
         一个示例附录，例如可以附上你的设计图纸。
     ```
 
-    更多查看[示例文件](https://github.com/sicheng1806/paper-sicheng/blob/main/template/hhu-bachelor-thesis/hhu-bachelor-thesis-temp.typ)和[示例效果演示文件](https://raw.githubusercontent.com/sicheng1806/paper-sicheng/template/hhu-bachelor-thesis/hhu-bachelor-thesis-temp.pdf)
+    更多查看[示例文件](https://github.com/sicheng1806/paper-sicheng/blob/main/template/hhu-bachelor-thesis/hhu-bachelor-thesis-temp.typ)和[示例效果演示文件](https://raw.githubusercontent.com/sicheng1806/paper-sicheng/main/template/hhu-bachelor-thesis/hhu-bachelor-thesis-temp.pdf)
 
 ## 使用方法
 
@@ -98,4 +98,4 @@
 
 ## 致谢
 
-- 非官方河海大学毕业论文模版(工科): [shaneworld/HHU-Thesis-Template](https://github.com/shaneworld/HHU-Thesis-Template)
+- 非官方河海大学毕业论文模版(工科): [shaneworld/HHU-Thesis-Template](https://github.com/shaneworld/HHU-Thesis-Template)。
