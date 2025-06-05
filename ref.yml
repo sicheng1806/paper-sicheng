@@ -1,0 +1,55 @@
+国史旧闻:陈登原:
+  type: book
+  title: 国史旧闻:第一卷
+  author: 陈登原
+  date: 2000
+  publisher:
+    name: 中华书局
+    location: 北京
+  page-range: '29'
+经济数学与金融数学:哈里森:
+  type: book
+  title: 经济数学与金融数学
+  author:
+  - 哈里森
+  - 沃尔德论
+  date: 2012
+  affiliated:
+    names: 谢远涛
+    role: translator
+  publisher: 北京：中国人民大学出版社
+  page-range: 235-236
+当代美国外交:赵学功:
+  type: book
+  title: 当代美国外交
+  author: 赵学功
+  date: 2001
+  publisher:
+    name: 社会科学文献出版社
+    location: 北京
+  url:
+    value: http://www.cadal.zju.edu.cn/book/trySinglePage/33023884/1
+    date: 2014-06-11
+Probability:PEEBLES:
+  type: book
+  title: Probability, random variables, and random signal principles
+  author: PEEBLES P Z, Jr
+  date: 2001
+  publisher:
+    name: McGraw Hill
+    location: New York
+  edition: 4th
+土壤环境质量标准:gb15616-1995:
+  type: misc
+  genre: standard
+  title: 土壤环境质量标准:GB 15616——1995
+  author: 国家环境保护局科技标准司
+  date: 1996
+  publisher:
+    name: 中国标准出版社
+    location: 北京
+  page-range: 2-3
+  url:
+    value: http://wenku.baidu.com/view/b950a34b767f5acfalc7cd49.html
+    date: 2013-10-14
+

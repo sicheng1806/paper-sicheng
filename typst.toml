@@ -1,0 +1,15 @@
+[package]
+name = "paper-sicheng"
+version = "0.0.2"
+entrypoint = "src/lib.typ"
+authors = ["sicheng <https://github.com/sicheng1806>"]
+license = "MIT"
+description = "A template used to create articles"
+# Optional
+categories = ["paper"]
+exclude = ["main.typ", "main.bib", "target/","imgs"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"     # TODO: this need to be created
+thumbnail = "thumbnail.png" # TODO: this need to be created
