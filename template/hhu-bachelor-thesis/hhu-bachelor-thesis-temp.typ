@@ -1,5 +1,5 @@
 #import "../../src/lib.typ": hhu-thesis, utils
-#import hhu-thesis: hhu-bachelor-thesis
+#import hhu-thesis: hhu-bachelor-thesis, thanks, appendix-conf, cn-bibliography
 
 #show: hhu-bachelor-thesis.with(
   author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
@@ -246,10 +246,7 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 应严格区分自己的成果与导师科研成果和前人已有研究的界限。
 
-= 后面的章节
-
 后面还需添加致谢、参考文献，若有附录还可添加附录
-
 
 参考文献需要使用 bib 格式的引用文献表，再在正文中通过 ```typ @labelname``` 方式引用。如
 
@@ -276,3 +273,22 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 就会自动生成参考文献表。
 
 根据要求，河海大学本科毕业论文要求参考文献部分采用 `GB7714-2005`。
+
+#thanks[致谢部分记得感谢所有对你有所支持的人]
+
+#cn-bibliography(
+  bibliography.with("../../bibs/ref.bib"),
+  full: true,
+)
+
+#show: appendix-conf
+
+= 设计图纸
+
+一个示例附录，例如可以附上你的设计图纸。
+
+
+
+
+
+
