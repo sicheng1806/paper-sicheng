@@ -1,0 +1,1 @@
+#let hhu-logo = image.with("../assets/HHU-Logo.png")

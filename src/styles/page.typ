@@ -1,5 +1,4 @@
 #import "../constant.typ": font-zh, fontsize-zh
-#import "../utils.typ": get-cur-chapter-by-page
 
 #let set-footer(
   footer-align: center, 

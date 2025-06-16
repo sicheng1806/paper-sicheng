@@ -1,44 +1,9 @@
-#import "../../src/lib.typ": hhu-thesis
-#import hhu-thesis: hhu-bachelor-thesis, thanks, appendix-conf, cn-bibliography
+#import "../../src/lib.typ": basic-chinese-report
+#import basic-chinese-report: chinese-report-style
 
-#show: hhu-bachelor-thesis.with(
-  author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
-  advisors: (
-    CN: "张三",
-    EN: "Zhang San"
-  ),
-  thesis-name: (
-    CN: "本科毕业论文",
-    EN: [
-      BACHELOR'S DEGREE THESIS \
-      OF HOHAI UNIVERSITY
-    ],
-    heading: "河海大学本科毕业论文"
-  ),
-  title: (
-    CN: [植物对泥沙沉降规律的影响研究],
-    EN: [
-      Study on the influence of plants on \
-      sediment deposition
-    ],
-  ),
-  school: (
-    CN: "河海大学",
-    EN: "Hohai University",
-  ),
-  form: "thesis", 
-  major: "自动化",
-  subject: "subject",
-  reader: "李四 副教授",
-  date: "二〇二四年五月",
-  cn-abstract: [
-    由于泥沙与水流的相互作用，使得河流发生演变，因此泥沙特性与水流特性均是河流动力学的重要研究课题。当水流中含有植物时，水流的紊动特性会发生明显的改变，从而引起泥沙的一些特性如沉速发生改变。本文以实验为基础，结合理论分析，研究了在静水条件下刚性植物对泥沙沉速的影响，同时在水槽中通过改变流量来研究在恒定均匀流条件下非淹没植物对泥沙沉降轨迹的影响，得到如下主要结论：
-  ],
-  cn-keywords: ("关键词1", "关键词2"),
-  en-abstract: [
-    Fluvial river processes evolve over time in response to the constant interaction between sediment and the water column. If vegetation is present within the water column, the change in turbulence characteristics will impact the movement of sediment, in particular the settling velocity. In this paper, the influence of vegetation on the settling velocities of sediment particles is studied experimentally. The non-submerged vegetation friction factor in steady uniform flow is considered by under different flume discharge quantities. The main outcomes can be summarized as follows:
-  ],
-  en-keywords: ("Keywords1", "Keywords2"),
+#show : chinese-report-style.with(
+  title: [基础中文文档模版],
+  with-outline: true
 )
 
 = 绪论
@@ -273,22 +238,3 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 就会自动生成参考文献表。
 
 根据要求，河海大学本科毕业论文要求参考文献部分采用 `GB7714-2005`。
-
-#thanks[致谢部分记得感谢所有对你有所支持的人]
-
-#cn-bibliography(
-  bibliography.with("../../bibs/ref.bib"),
-  full: true,
-)
-
-#show: appendix-conf
-
-= 设计图纸
-
-一个示例附录，例如可以附上你的设计图纸。
-
-
-
-
-
-

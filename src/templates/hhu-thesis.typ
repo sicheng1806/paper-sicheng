@@ -1,6 +1,7 @@
 #import "@preview/i-figured:0.2.4"
 #import "@preview/cuti:0.3.0": show-cn-fakebold
 #import "@preview/numbly:0.1.0": numbly
+#import "@preview/hydra:0.6.1": hydra
 #import "../style.typ" as sc_style
 #import "../models.typ" as sc_model
 #import "../utils.typ" as sc_utils
@@ -8,31 +9,11 @@
 
 
 #import sc_model: cn-bibliography
-#import "@preview/numbly:0.1.0": numbly
+#import sc_style: appendix-conf
 
 #let thanks(title: "致谢", s) = {
   heading(bookmarked: true, outlined: true, numbering: none, level: 1, title)
   s
-}
-
-#let appendix-conf(
-  it,
-  table-numbering: "A.1",
-  image-numbering: "A-1",
-  equation-numbering: "(A.1)",
-) = {
-  counter(heading).update(0)
-  counter(heading.where(level: 1)).update(0)
-  set heading(numbering: numbly(
-    "附录 {1:A}",
-    "{1:A}.{2}",
-    default: "A.1"
-  ))
-
-  show figure: i-figured.show-figure.with(numbering: image-numbering)
-  show figure.where(kind: table): i-figured.show-figure.with(numbering: table-numbering)
-  show math.equation.where(block: true): i-figured.show-equation.with(numbering: equation-numbering)
-  it
 }
 
 
@@ -132,17 +113,11 @@
   reader: "李四 副教授",
   date: "二〇二四年五月",
   cn-abstract: [
-由于泥沙与水流的相互作用，使得河流发生演变，因此泥沙特性与水流特性均是河流动力学的重要研究课题。当水流中含有植物时，水流的紊动特性会发生明显的改变，从而引起泥沙的一些特性如沉速发生改变。本文以实验为基础，结合理论分析，研究了在静水条件下刚性植物对泥沙沉速的影响，同时在水槽中通过改变流量来研究在恒定均匀流条件下非淹没植物对泥沙沉降轨迹的影响，得到如下主要结论
-#for _ in (1,2,3) {
-  set align(center)
-  par[......]
-}
 ],
-  cn-keywords: ("关键词1", "关键词2", "关键词3"),
+  cn-keywords: (),
   en-abstract: [
-Fluvial river processes evolve over time in response to the constant interactionbetween sediment and the water column. If vegetation is present within the watercolumn, the change in turbulence characteristics will impact the movement of sediment,in particular the settling velocity. In this paper, the influence of vegetation on thesettling velocities of sediment particles is studied experimentally. The non-submergedvegetation friction factor in steady uniform flow is considered by under different flumedischarge quantities. The main outcomes can be summarized as follows:
 ],
-  en-keywords: ("sediment","rigid vegetation","settling velocity", "turbulence characterize"),
+  en-keywords: (),
   doc
 ) = {
   // 自定义函数
@@ -264,7 +239,8 @@ Fluvial river processes evolve over time in response to the constant interaction
   // 声明部分
   hhu-statement-page(form: form)
   
-  // 摘要部分
+  // 编号前言开始
+  
   show: sc_style.set-footer.with(
     footer-align: center,
     footer-text: (size:12pt),
@@ -273,6 +249,7 @@ Fluvial river processes evolve over time in response to the constant interaction
   set page(numbering: "I")
   counter(page).update(1)
 
+  // 摘要部分
   sc_model.hhu-abstract(
     cn-abstract: cn-abstract,
     cn-keywords: cn-keywords,
@@ -295,7 +272,7 @@ Fluvial river processes evolve over time in response to the constant interaction
     outline(title:none, depth: 2)
   }
 
-  // 正文部分设置
+  // 正文部分设置+正文开始
   set page(
     header: {
       set align(center)
@@ -308,12 +285,10 @@ Fluvial river processes evolve over time in response to the constant interaction
       )
 
       context {
-        if calc.rem(counter(page).get().at(0),2) == 0 { // 偶数页
+        if calc.odd(counter(page).get().at(0)) { // 奇数页
+          hydra(1,use-last: true, skip-starting: false)
+        } else { // 偶数页
           thesis-name.heading
-        } else { // 奇数页
-          let chapter = sc_utils.get-cur-chapter-by-page()
-          if chapter.numbering != none [#numbering(chapter.numbering,..counter(heading).at(chapter.location()))#h(1em)]
-          chapter.body
         }
         line(length: 100%, stroke: (thickness: 0.5pt))
       }

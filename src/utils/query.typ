@@ -1,4 +1,7 @@
 /// 根据页码，确定当前的章节
+/// 
+/// !NOTE: 考虑使用hydra包代替
+/// 
 /// -> content
 #let get-cur-chapter-by-page() = {
   let chapters = query(heading.where(level: 1)) // 所有章节

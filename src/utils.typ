@@ -1,2 +1,3 @@
-#import "utils/string.typ": *
-#import "utils/heading.typ": *
+#import "utils/type.typ": *
+#import "utils/query.typ": *
+#import "utils/measure.typ": *

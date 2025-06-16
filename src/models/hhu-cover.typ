@@ -1,4 +1,5 @@
 #import "../constant.typ": font-zh, fontsize-zh
+#import "../assets.typ": hhu-logo
 #import "fields.typ": fields-grid
 #import "underline.typ": chinese-underline
 
@@ -79,7 +80,7 @@
       top + center,
       dy: 4.8cm,
       {
-        image("../../assets/HHU-Logo.png", width: 11cm)
+        hhu-logo(width: 11cm)
       },
     )
 
@@ -95,7 +96,6 @@
           size: fontsize-zh.一号,
           thesis-name.CN
         ))),
-        // 留白
         [],
         // 标题
         block(text(
@@ -104,7 +104,6 @@
           weight: "bold",
           title.CN
         )),
-        // 留白
         [],
         // 信息域
         {
@@ -127,7 +126,6 @@
             content-style: chinese-underline
           )
         },
-        // 留白
         [],
         // 日期和地点
         {
